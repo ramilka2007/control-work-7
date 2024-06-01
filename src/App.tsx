@@ -1,9 +1,9 @@
 import './App.css'
 import {Menu} from './types';
 import {useState} from 'react';
-import drinkImage from 'assets/drink.png';
-import foodImage from 'assets/food.png';
-
+import MenuForChoose from './components/Menu/Menu';
+import drinkImage from './assets/drink.png';
+import foodImage from './assets/food.png';
 const App = () => {
   const MENU: Menu[] = [
     {name: 'Hamburger', price: 80, image: `${foodImage}`},
@@ -28,9 +28,21 @@ const App = () => {
 
   return (
       <div className="row">
-        <div className="chosenItems"></div>
+        <div className="chosenItems">
+          <div className="title">
+            <h1>Order Details:</h1>
+          </div>
+
+        </div>
         <div className="MenuList">
-          <h1 className="title">Add Items:</h1>
+          <div className="title">
+          <h1>Add Items:</h1>
+          </div>
+          <div className="itemsRow">
+            {menuList.map((menuItem) => (
+              <MenuForChoose name={menuItem.name} price={menuItem.price} image={menuItem.image}/>
+            ))};
+          </div>
         </div>
       </div>
   )

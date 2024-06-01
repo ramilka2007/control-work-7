@@ -17,6 +17,15 @@
 }
 
 .title {
-  position: absolute;
-  font-size: 24px;
+  border-bottom: 3px solid black;
+}
+
+.title h1 {
+  font-size: 36px;
+}
+
+.itemsRow {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
 }

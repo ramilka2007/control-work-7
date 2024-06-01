@@ -1,0 +1,23 @@
+.menuItem {
+  width: 40%;
+  display: flex;
+  margin: 5px;
+  border: 3px solid black;
+  padding: 5px;
+  border-radius: 10px;
+}
+
+.ItemImage {
+  width: 50px;
+  height: 50px;
+  margin-right: 5px;
+}
+
+.ItemImage img {
+  width: 50px;
+  height: 50px;
+}
+
+.ItemName {
+  text-align: left;
+}
