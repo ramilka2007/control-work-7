@@ -5,11 +5,12 @@ interface MenuForChoose {
   name: string,
   price: number,
   image: string,
+  addItemClick: React.MouseEventHandler,
 }
 
-const MenuForChoose: React.FC<MenuForChoose> = ({name, price, image}) => {
+const MenuForChoose: React.FC<MenuForChoose> = ({name, price, image, addItemClick}) => {
   return (
-    <div className="menuItem">
+    <div className="menuItem" onClick={addItemClick}>
       <div className="ItemImage">
         <img src={image} alt={name}/>
       </div>
