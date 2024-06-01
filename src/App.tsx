@@ -27,6 +27,8 @@ const App = () => {
   const menuList = menu.map((menuItem, index) => ({
     ...menuItem, ...MENU[index]}));
 
+  const haveOrders = menu.filter((item) => item.count > 0)
+
   const addItem = (name: string) => {
     setMenu((prevMenu) => {
       return prevMenu.map((item) => {
@@ -44,11 +46,20 @@ const App = () => {
           <div className="title">
             <h1>Order Details:</h1>
           </div>
-          <div className="addedItems">
-            {menuList.map((menuItem) => (
-              <OrderDetails key={menuItem.price * menuItem.count} name={menuItem.name} price={menuItem.price} count={menuItem.count}/>
-            ))}
-          </div>
+          {haveOrders.length === 0 ?
+            <>
+              <h2>Order is empty!</h2> <br/>
+              <span>Please add some items</span>
+            </>
+            :
+            <>
+              <div className="addedItems">
+                {menuList.map((menuItem) => (
+                  <OrderDetails key={menuItem.price - 10} name={menuItem.name} price={menuItem.price} count={menuItem.count}/>
+                ))}
+              </div>
+            </>
+          }
         </div>
         <div className="MenuList">
           <div className="title">
@@ -57,7 +68,7 @@ const App = () => {
           <div className="itemsRow">
             {menuList.map((menuItem) => (
               <MenuForChoose
-                key={menuItem.price}
+                key={menuItem.price + 10}
                 name={menuItem.name}
                 price={menuItem.price}
                 image={menuItem.image}

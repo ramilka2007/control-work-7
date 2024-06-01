@@ -24,6 +24,15 @@
   font-size: 36px;
 }
 
+.chosenItems h2{
+  margin: 25% 0 0;
+}
+
+.chosenItems h2, .chosenItems span {
+  font-size: 30px;
+  font-weight: 700;
+}
+
 .addedItems {
   display: flex;
   flex-direction: column;
@@ -35,6 +44,7 @@
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
+  margin: 100px 0;
 }
 
 .item {
